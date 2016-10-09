@@ -42,7 +42,6 @@ public class TestRead {
 		return sb.toString();
 */
 		File file= new File("src/logs/actualLog.log");
-		file.	
 		
 		
 		
