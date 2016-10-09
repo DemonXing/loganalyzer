@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.util.Scanner;
 import java.util.regex.*;  
 import java.util.Scanner;
+import java.io.File;
+import java.io.FileNotFoundException;;
 
 public class TestRead {
 
@@ -66,7 +68,32 @@ public class TestRead {
 	
 	
 	//Pattern Matching
+	public void Patternmatch(String date) throws FileNotFoundException{
+	File testFile = new File ("E:\\eclipse\\bin\\Nitin-test\\src\\actualLog.log");
+    Scanner s = new Scanner(testFile);
+    int count=0;
+
+    String pattern=date;
+   
+    while(s.hasNextLine()){
+        String line = s.nextLine();
+
+        if (line.contains(pattern)){
+            count++;
+
+            
+        } 
+        
+        
+    }   System.out.println("Date found "+ count + " times");
+
+    s.close();
+
+    }
+
 	
+
+	/*
 	public String Patternmatch(String date,String mydata) 
 	{
 		
@@ -78,14 +105,16 @@ public class TestRead {
 	//Pattern classes for UName, Date, Disconnects, Drops, AvgLimitExceed
 	
 	Pattern patternName = Pattern.compile("ComputerName:(.*?)UserID");
-	Pattern patternDate = Pattern.compile("\\((.*?)\\)");
+	//Pattern patternDate = Pattern.compile("\\((.*?)\\)");
+    String datepattern="11/24";
+
 	Pattern patternDisconnect = Pattern.compile("Client is disconnected from agent");
 
 	//Matcher classes for UName, Date, Disconnects, Drops, AvgLimitExceed
 	//Datematcher not working
 	
 	Matcher Namematcher= patternName.matcher(mydata);
-	Matcher Datematcher= patternDate.matcher(mydata);
+	//Matcher Datematcher= patternDate.matcher(mydata);
 	Matcher Disconnectmatcher=patternDisconnect.matcher(mydata);
 	
 	
@@ -118,4 +147,6 @@ public class TestRead {
 	return null;
 	}
 
+	*/
+	
 }

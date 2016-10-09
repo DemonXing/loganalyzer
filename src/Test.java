@@ -9,9 +9,9 @@ public class Test {
 				//Calling TestRead to read file
 				TestRead tr=new TestRead();
 				
-				String data=tr.readerFile();
-				String date=tr.Askdate();
-				tr.Patternmatch(date,data);
+				tr.readerFile();
+				String date= tr.Askdate();
+				tr.Patternmatch(date);
 				
 				
 				//TestWrite tw=new TestWrite();
